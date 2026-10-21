@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+ledger.jsonl
+cache/*
+!cache/calib.json
+!cache/calib_drop.json
+viewer/runs/mock_*.js
+viewer/runs/test_*.js
+docs/LAUNCH.md
+data/*_mock_*.json
+.vercel/
+node_modules/

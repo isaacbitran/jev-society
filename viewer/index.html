@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jevSociety: feeds, bundles and lean</title>
+<meta name="description" content="An interactive study: simulated societies whose only judge of which beliefs fit together is Jev, a judgment model. Does a ranked feed keep people apart, which opinions bundle together, and which side wins.">
+<meta property="og:title" content="jevSociety: feeds, bundles and lean">
+<meta property="og:description" content="10,000 simulated accounts, one AI judge of which beliefs fit together. A ranked feed always hides disagreement; whether it polarizes opinions flips with the assumptions.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%225%22 cy=%228%22 r=%224%22 fill=%22%233f6ea6%22/%3E%3Ccircle cx=%2211%22 cy=%228%22 r=%224%22 fill=%22%23b5432f%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/study.css">
+</head>
+<body>
+<header class="top"><div class="in">
+ <a class="brand" href="#feed" data-p="feed">jevSociety</a>
+ <nav class="tabs" id="tabs" aria-label="Parts">
+  <button data-p="feed" class="on"><span class="n">1</span>The feed</button>
+  <button data-p="map"><span class="n">2</span>The bundles</button>
+  <button data-p="lean"><span class="n">3</span>The lean</button>
+ </nav>
+</div></header>
+
+<main>
+<div class="mast">
+ <div class="kicker">An interactive study</div>
+ <h1>Three questions for an AI judge of which beliefs fit together</h1>
+ <p class="abstract">Simulated people hold opinions, read each other and change their minds. The only thing that decides which opinions fit together is Jev, a model that returns a judgment score instead of text. Each part below asks one question, answers it in a sentence, and lets you watch the society that produced the answer.</p>
+ <div class="byline"><span class="au">Isaac Bitran</span><span class="sep">·</span>Brown University<span class="sep">·</span>October 2026</div>
+ <ol class="contents">
+  <li><a href="#feed" data-p="feed"><span class="n">1</span><span class="t">Does a ranked feed keep people apart?</span><span class="d">It always hides disagreement. Whether it also pulls opinions further apart depends on the assumptions.</span></a></li>
+  <li><a href="#map" data-p="map"><span class="n">2</span><span class="t">Which opinions end up bundled together?</span><span class="d">The same ones US adults bundle, because Jev already knows which opinions go together.</span></a></li>
+  <li><a href="#lean" data-p="lean"><span class="n">3</span><span class="t">Which side wins?</span><span class="d">Whichever side Jev's own judgments lean toward. A small lean decides the outcome.</span></a></li>
+ </ol>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<section class="part on" id="part-feed">
+ <div class="head">
+  <div class="kicker">Part 1 · The feed</div>
+  <h2>Does a ranked feed keep people apart?</h2>
+  <p class="answer">A ranked feed reliably hides disagreement and stops people unfollowing each other. Whether it also pulls opinions further apart is not reliable: the answer flips when the assumptions change.</p>
+  <p class="lede">10,000 simulated accounts each follow 20 others and take a side on 16 political issues. Every day each account posts one opinion, reads 6 of the 20 posts from the accounts it follows, likes the ones that fit its other opinions (Jev judges the fit), sometimes adopts an opinion it read, and sometimes unfollows someone it disagrees with. The two societies below start identical; the only difference is which 6 posts the feed picks: <b>a random 6 (random feed)</b> or <b>the 6 the reader is most likely to like (ranked feed)</b>. Every post in a day is equally new, so a newest-first feed reduces to the random one.</p>
+ </div>
+ <figure class="fig">
+  <div class="fh"><span class="fn">Figure 1</span><span class="ft">The same 10,000 accounts under two feeds</span></div>
+  <div class="bar"><div class="seg" id="feed-modes"></div><div class="lay" id="feed-lay" hidden><span>Layout</span><div class="seg"><button data-l="reads" class="on">Who reads whom</button><button data-l="follows">Who follows whom</button></div></div></div>
+  <div class="note" id="feed-note"></div>
+  <details class="robust" id="feed-robust" hidden><summary>More runs: older and smaller versions of the experiment</summary><div class="rlist" id="feed-rlist"></div></details>
+  <div class="duo" id="feed-panes"></div>
+  <div class="howto">
+   <h4>How to read this picture</h4>
+   <ul>
+    <li><span class="ic"><i class="dot" style="background:var(--mixed)"></i></span><span id="feed-dots">Each dot is one of 2,500 accounts, drawn from the 10,000.</span></li>
+    <li><span class="ic dots3"><i class="dot" style="background:var(--blue)"></i><i class="dot" style="background:var(--red)"></i><i class="dot" style="background:var(--mixed)"></i></span><span>Colour is its opinions: blue leans liberal, red leans conservative, grey is mixed.</span></li>
+    <li><span class="ic"><i class="ring"></i></span><span>Hollow: it has stopped posting at least one of its opinions because its feed disagrees.</span></li>
+    <li><span class="ic"><i class="pos"></i></span><span id="feed-pos">Position is who reads whom: accounts are pulled together when one saw the other's posts. Directions mean nothing.</span></li>
+    <li><span class="ic lns"><i class="ln" style="background:var(--ink4)"></i><i class="ln" style="background:var(--cross)"></i></span><span>Lines are the posts read on the day shown: grey were read by someone on the same side, purple by someone on the other side.</span></li>
+    <li><span class="ic"><i class="tap"></i></span><span>Click any dot to see that person: their opinions, their feed, whom they follow. Space bar plays.</span></li>
+   </ul>
+   <p class="m" id="feed-laynote" hidden>The reads layout makes the ranked society look more split, because its feed hides the other side. The follows layout shows the random-feed society's unfollowing instead: its shrinking minority is pushed to the edge, while the ranked society keeps following across camps.</p>
+  </div>
+  <div class="transport" id="feed-tr"></div>
+  <div class="ckey"><span><i class="sw" style="background:var(--a)"></i><span id="feed-k0">Random feed</span></span><span><i class="sw" style="background:var(--b)"></i><span id="feed-k1">Ranked feed</span></span></div>
+  <div class="charts" id="feed-charts"></div>
+ </figure>
+ <div class="keys" id="feed-stats"></div>
+ <details class="more">
+  <summary>Details: how it works, the fair tests, tables and limits</summary>
+  <div class="body">
+   <div><h4>One day, for every account</h4><ol>
+    <li><b>Post</b> one of its 16 opinions at random.</li>
+    <li><b>Read</b> 6 of the 20 posts from the accounts it follows. Random feed: any 6. Ranked feed: the 6 it is most likely to like.</li>
+    <li><b>Like</b> a post with the probability that the post fits its other 15 opinions better than the opposite opinion would. Jev answers that question.</li>
+    <li><b>Adopt</b> the opinion of one post it disagrees with, more often the more it already agrees with the author.</li>
+    <li><b>Unfollow</b> (5% chance) the author of a disagreeing post it did not like, and follow someone new.</li>
+    <li><b>Go quiet</b> on an issue when less than 30% of its feed agrees with it there. It keeps the opinion but stops posting it.</li>
+   </ol></div>
+   <div><h4>The fair tests</h4>
+    <p>The first runs showed the random-feed society turning almost entirely conservative. Two objections: Jev itself leans conservative, and nothing in the model keeps people from drifting to one view. Three tests check this, each run on 10,000 accounts for 300 days.</p>
+    <p><b>Lean removed.</b> Jev picks the conservative side of an issue 60.5% of the time. Each judgment is averaged with its mirror image (every other opinion flipped), so Jev favours neither side.</p>
+    <p><b>Stubborn agents.</b> Each day, with a 26% chance, an account moves one opinion it has changed back to where it started. This is the weakest pull that keeps a random-feed society from drifting to one view.</p>
+    <p><b>Tilted start.</b> 60% of starting opinions on the liberal side instead of half. The random feed amplifies whichever side starts ahead; the ranked feed freezes the starting split.</p>
+   </div>
+   <div><h4>Limits</h4><ul>
+    <li>"Ranked" here means ranked by predicted likes. Real feeds also reward outrage.</li>
+    <li>3 to 10 random starts per test, one set of parameters. The stubborn runs had not fully settled by day 300.</li>
+    <li>Everyone is 2 to 3 follows from everyone else, which makes agreement easy to spread.</li>
+    <li>Colours use the survey's liberal–conservative direction. Agents never see it.</li>
+    <li>Not a model of people: 16 sentences and one judge.</li>
+   </ul></div>
+  </div>
+  <div class="tables" id="feed-tables"></div>
+ </details>
+</section>
+
+<!-- ============ PART 2 ============ -->
+<section class="part" id="part-map">
+ <div class="head">
+  <div class="kicker">Part 2 · The bundles</div>
+  <h2>Which opinions end up bundled together?</h2>
+  <p class="answer">The same ones US adults bundle: 16 unrelated issues sort into camps whose pairings match the 2024 General Social Survey at r&nbsp;=&nbsp;0.82, where 1 would be a perfect match.</p>
+  <p class="lede">10,000 agents sit on a grid, each with a random side on 16 issues. Every round an agent meets a neighbour and may copy the neighbour's side on one issue, more often when that side fits its other 15 opinions, as Jev judges it. The matrix on the right shows <b>how strongly each pair of opinions travels together</b>: this society in the lower left, US adults in the upper right.</p>
+ </div>
+ <figure class="fig">
+  <div class="fh"><span class="fn">Figure 2</span><span class="ft">The society on its grid, and which opinions travel together</span></div>
+  <div class="bar"><div class="seg" id="map-modes"></div></div>
+  <div class="note" id="map-note"></div>
+  <div class="duo" id="map-panes"></div>
+  <div class="legend">
+   <span><i class="dot" style="background:var(--blue)"></i>Leans liberal</span>
+   <span><i class="dot" style="background:var(--red)"></i>Leans conservative</span>
+   <span><i class="dot" style="background:var(--mixed)"></i>Mixed</span>
+   <span><i class="dot sq" style="background:var(--pos)"></i>Matrix: held together</span>
+   <span><i class="dot sq" style="background:var(--neg)"></i>Matrix: rarely held together</span>
+   <span>Click an agent or a matrix cell for details.</span>
+  </div>
+  <div class="transport" id="map-tr"></div>
+  <div class="ckey" id="map-key"></div>
+  <div class="charts c2" id="map-charts"></div>
+ </figure>
+ <div class="keys" id="map-stats"></div>
+ <details class="more">
+  <summary>Details: how it works, controls and limits</summary>
+  <div class="body">
+   <div><h4>One round, for every agent</h4><ol>
+    <li>Meet a random neighbour on the grid.</li>
+    <li>Interact with a probability equal to the share of issues they agree on.</li>
+    <li>Pick one issue where they differ and consider the neighbour's side.</li>
+    <li>Switch with a probability set by how much better that side fits the agent's other 15 opinions, as Jev judges it.</li>
+    <li>Rarely (0.2%), flip one random issue.</li>
+   </ol></div>
+   <div><h4>Controls</h4>
+    <p><b>Stored answers.</b> 960 Jev answers about how well two statements fit, asked once and reused for every decision.</p>
+    <p><b>Live Jev.</b> Every switch is a fresh Jev question: which side fits the other 15 opinions better (1,600 agents).</p>
+    <p><b>No meaning.</b> The same copying rule with no judgments. <b>Shuffled meaning.</b> The same answers attached to the wrong sentences. Both lose the survey's pattern.</p>
+    <p>The match is measured at the moment the society's opinions travel together as strongly as US adults' do.</p>
+   </div>
+   <div><h4>Limits</h4><ul>
+    <li>The pattern is already in Jev's pairwise answers, which match the survey at r = 0.81 on their own. The society reproduces and strengthens it; it does not discover it.</li>
+    <li>Copying neighbours keeps going: agents end far more bundled than US adults.</li>
+    <li>Agents who never meet anyone still match the survey, but bundle less than half as strongly as US adults.</li>
+    <li>One survey, one country, 16 yes/no items, one judge.</li>
+   </ul></div>
+  </div>
+ </details>
+</section>
+
+<!-- ============ PART 3 ============ -->
+<section class="part" id="part-lean">
+ <div class="head">
+  <div class="kicker">Part 3 · The lean</div>
+  <h2>Which side wins?</h2>
+  <p class="answer">Whichever side Jev's judgments lean toward: a 14.6-point lean in how Jev picks which belief to drop moves the progressive share of the society from 31% (lean reversed) to 82% (as measured).</p>
+  <p class="lede">Each agent holds 5 of 40 political belief sentences. When it meets a like-minded neighbour it adopts one of the neighbour's beliefs, and Jev picks which of its own five to drop. That drop judgment leans toward keeping progressive beliefs; turning the lean down, off and up works like a dial.</p>
+ </div>
+ <figure class="fig feature">
+  <div class="fh"><span class="fn">Figure 3</span><span class="ft">The dial: how much of the society ends on the progressive side for each lean</span></div>
+  <div class="sub" id="lean-sweep-sub"></div>
+  <div id="lean-sweep"></div>
+ </figure>
+ <figure class="fig">
+  <div class="fh"><span class="fn">Figure 4</span><span class="ft">One society on its grid</span></div>
+  <div class="bar"><div class="seg" id="lean-modes"></div></div>
+  <div class="note" id="lean-note"></div>
+  <div class="duo" id="lean-panes"></div>
+  <div class="legend" id="lean-legend">
+   <span><i class="dot sq" style="background:var(--blue)"></i>Mostly progressive beliefs</span>
+   <span><i class="dot sq" style="background:var(--red)"></i>Mostly traditional beliefs</span>
+   <span><i class="dot sq" style="background:var(--mixed)"></i>Mixed</span>
+   <span>Labels name the most common beliefs in large regions. Click a cell to read that agent's five beliefs.</span>
+  </div>
+  <div class="transport" id="lean-tr"></div>
+  <div class="ckey" id="lean-key"></div>
+  <div class="charts c2" id="lean-charts"></div>
+ </figure>
+ <div class="keys" id="lean-stats"></div>
+ <details class="more">
+  <summary>Details: how it works, controls and limits</summary>
+  <div class="body">
+   <div><h4>One round, for every agent</h4><ol>
+    <li>Meet a neighbour on the grid.</li>
+    <li>Jev scores how much their beliefs agree; more agreement means a higher chance to interact.</li>
+    <li>On interacting, adopt one of the neighbour's beliefs.</li>
+    <li>Jev picks which of the agent's own beliefs to drop, to stay at five.</li>
+   </ol></div>
+   <div><h4>Controls</h4>
+    <p><b>The dial.</b> The drop judgment's lean is scaled from reversed (−14.6 points) to doubled (+29.3), with 1,600 agents and 4 random starts per setting.</p>
+    <p><b>Lean removed.</b> Both side leans in Jev's judgments are removed; the society splits much more evenly.</p>
+    <p><b>Counting shared beliefs.</b> A classic copying model with no meaning: agents count shared beliefs, and nobody becomes consistent.</p>
+    <p><b>Everyday life.</b> The same rules on 40 sentences about food, work, family and money; one dominant culture forms instead of two camps.</p>
+   </div>
+   <div><h4>Limits</h4><ul>
+    <li>The lean is all in the drop judgment; Jev's agreement score shows no measurable lean.</li>
+    <li>Jev leans opposite ways in different judgments: here progressive, while in Parts 1 and 2 its fit judgment favours conservative positions. Each part's winner follows the lean of the judgment it uses.</li>
+    <li>Dial runs are 1,600 agents after 24 rounds; the 10,000-agent maps are single runs.</li>
+    <li>Not a model of people: five sentences each, one judge.</li>
+   </ul></div>
+  </div>
+ </details>
+</section>
+</main>
+<footer><div class="in">All numbers come from the recorded runs in <code>viewer/runs/</code>, <code>data/</code> and the README. Code, data and methods: <a href="https://github.com/isaacbitran/jev-society">github.com/isaacbitran/jev-society</a>.</div></footer>
+
+<aside id="insp" aria-live="polite"><button class="x" id="insp-x" aria-label="Close">×</button><div id="insp-body"></div></aside>
+<div id="tip"></div>
+
+<script src="runs/net_summary.js"></script>
+<script src="runs/live10k_manifest.js"></script>
+<script src="runs/fair_summary.js"></script>
+<script src="runs/bundle_summary.js"></script>
+<script src="runs/index.js"></script>
+<script src="runs/sweep.js"></script>
+<script src="js/core.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/feed.js"></script>
+<script src="js/partymap.js"></script>
+<script src="js/lean.js"></script>
+<script>J.start();</script>
+</body>
+</html>
