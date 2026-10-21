@@ -15,3 +15,5 @@ docs/LAUNCH.md
 data/*_mock_*.json
 .vercel/
 node_modules/
+.vercel
+.env*
