@@ -1,0 +1,24 @@
+{
+ "coef": {
+  "intercept": 0.3938,
+  "alignment p_u*p_v": 0.1733,
+  "distance |p_u-p_v|": -0.0504,
+  "shared/5": 0.3669,
+  "side lean m": -0.0317
+ },
+ "se": {
+  "intercept": 0.0031,
+  "alignment p_u*p_v": 0.0039,
+  "distance |p_u-p_v|": 0.0033,
+  "shared/5": 0.0041,
+  "side lean m": 0.002
+ },
+ "e": -0.03171059963532727,
+ "n": 4000,
+ "r2": 0.881401157305666,
+ "matched_score_0to4": {
+  "both_all_progressive": 3.07290780141844,
+  "both_all_traditional": 2.7953076923076923
+ },
+ "lean_points_0to4": 0.25368479708261815
+}

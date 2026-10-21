@@ -1,0 +1,4 @@
+# Deploy only the static study page (viewer/) and this config; never upload keys, caches or the virtualenv.
+/*
+!viewer
+!vercel.json
