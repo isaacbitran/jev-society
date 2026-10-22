@@ -10,7 +10,7 @@ two societies.
 
 ![The same 10,000 accounts, days 0–300: random feed (left) and ranked feed (right). Dots are 2,500 drawn accounts coloured by their opinions (blue liberal, red conservative); position is who reads whom.](img/hero.gif)
 
-Live demo: https://jev-society.vercel.app
+**Live demo:** https://jev-society.vercel.app · **One-page note:** [PDF](https://github.com/isaacbitran/jev-society/releases/download/v1.0/jev-society-note.pdf)
 
 ## Results
 
