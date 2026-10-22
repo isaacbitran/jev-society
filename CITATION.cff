@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "jevSociety: what a ranked feed does to 10,000 AI agents"
+abstract: "A 10,000-account simulated social network where a non-generative judgment model (Jev) decides every like and change of mind; a feed ranked by predicted likes always hides disagreement and cuts unfollows 11-36x."
+authors:
+  - family-names: Bitran
+    given-names: Isaac
+    affiliation: Brown University
+repository-code: "https://github.com/isaacbitran/jev-society"
+url: "https://jev-society.vercel.app"
+license: MIT
+version: "1.0"
+date-released: "2026-10-21"
+keywords:
+  - multi-agent simulation
+  - opinion dynamics
+  - recommender systems
+  - judgment models
